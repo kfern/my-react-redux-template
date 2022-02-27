@@ -1,7 +1,7 @@
 import { memo, Fragment, useEffect } from "react";
 import { useAppSelector, useAppDispatch } from "../../app/hooks";
 import { setStatus, selectShow, selectInput, selectError } from "./slice";
-import { LocalStatus } from "./types";
+import { LocalStatus, SearchFormData } from "./types";
 import SearchForm from "./SearchForm";
 import FindAndShow from "./FindAndShow";
 
@@ -16,9 +16,18 @@ const Search = () => {
     dispatch(setStatus({ status: LocalStatus.SEARCH_INIT }));
   }, [dispatch]);
 
+  const handleSearchSubmit = (data: SearchFormData) => {
+    dispatch(
+      setStatus({
+        status: LocalStatus.SEARCH_SUBMIT,
+        params: { ...data },
+      })
+    );
+  };
+
   return (
     <Fragment>
-      {show.input && <SearchForm />}
+      {show.input && <SearchForm handleSubmit={handleSearchSubmit} />}
       {show.search && <FindAndShow query={query} />}
       {show.error && <p>{searchError}</p>}
     </Fragment>

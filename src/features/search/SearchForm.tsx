@@ -1,20 +1,12 @@
 import { memo, Fragment, useState } from "react";
-import { useAppDispatch } from "../../app/hooks";
-import { setStatus } from "./slice";
-import { LocalStatus } from "./types";
+import { SearchFormData } from "./types";
 
-const SearchForm = () => {
-  const dispatch = useAppDispatch();
-  const [values, setValues] = useState({ query: "" });
+interface SearchFormProps {
+  handleSubmit: (data: SearchFormData) => void;
+}
 
-  const handleOnClick = () => {
-    dispatch(
-      setStatus({
-        status: LocalStatus.SEARCH_SUBMIT,
-        params: { ...values },
-      })
-    );
-  };
+const SearchForm = ({ handleSubmit }: SearchFormProps) => {
+  const [data, setData] = useState({ query: "" });
 
   return (
     <Fragment>
@@ -26,12 +18,12 @@ const SearchForm = () => {
           aria-label="query-input"
           aria-required="true"
           name="query"
-          value={values.query}
+          value={data.query}
           placeholder="bulbasaur, por ejemplo"
-          onChange={(e) => setValues({ query: e.target.value })}
+          onChange={(e) => setData({ query: e.target.value })}
         />
       </p>
-      <button onClick={handleOnClick} disabled={values.query.length === 0}>
+      <button onClick={() => handleSubmit(data)} disabled={data.query.length === 0}>
         Search
       </button>
     </Fragment>

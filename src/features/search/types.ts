@@ -18,6 +18,10 @@ export interface LocalState {
   show: LocalShow;
   error: string;
 }
+
+export interface SearchFormData {
+  query: string;
+}
 interface IDLE_ACTION {
   status: LocalStatus.IDLE;
 }
