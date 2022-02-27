@@ -3,7 +3,7 @@ import { useAppSelector, useAppDispatch } from "../../app/hooks";
 import { setStatus, selectShow, selectInput, selectError } from "./slice";
 import { LocalStatus, SearchFormData } from "./types";
 import SearchForm from "./SearchForm";
-import FindAndShow from "./FindAndShow";
+import SearchAndShow from "./SearchAndShow";
 
 const Search = () => {
   const show = useAppSelector(selectShow);
@@ -28,7 +28,7 @@ const Search = () => {
   return (
     <Fragment>
       {show.input && <SearchForm handleSubmit={handleSearchSubmit} />}
-      {show.search && <FindAndShow query={query} />}
+      {show.search && <SearchAndShow query={query} />}
       {show.error && <p>{searchError}</p>}
     </Fragment>
   );
