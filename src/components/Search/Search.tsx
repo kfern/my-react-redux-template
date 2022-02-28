@@ -1,7 +1,7 @@
 import { memo, Fragment, useEffect } from "react";
 import { useAppSelector, useAppDispatch } from "../../app/hooks";
-import { setStatus, selectShow, selectInput, selectError } from "./slice";
-import { LocalStatus, SearchFormData } from "./types";
+import { setStatus, selectShow, selectInput, selectError } from "../../features/search/slice";
+import { LocalStatus, SearchFormData } from "../../app/types";
 import SearchForm from "./SearchForm";
 import SearchAndShow from "./SearchAndShow";
 

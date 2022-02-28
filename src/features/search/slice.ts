@@ -18,7 +18,7 @@ export const initialState: Slice.LocalState = {
 
 const getTextError = (query: string, error: ApiError): string => {
   let textError = `Oh no! An error occurred while searching for "${query}":`;
-  /* istanbul ignore else: I have a default value */
+  /* istanbul ignore next: Type guard and we have a default value */
   if (Slice.isFetchBaseQueryErrorType(error)) {
     // now you can access error.data
     textError = `${textError} ${error.data ? `'${error.data}'` : ""} (${error.status})`;

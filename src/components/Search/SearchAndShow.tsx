@@ -1,7 +1,7 @@
 import { memo, Fragment, useEffect } from "react";
 import { useAppDispatch } from "../../app/hooks";
-import { setStatus } from "./slice";
-import { LocalStatus } from "./types";
+import { setStatus } from "../../features/search/slice";
+import { LocalStatus } from "../../app/types";
 
 import { useGetPokemonByNameQuery } from "../../app/api";
 

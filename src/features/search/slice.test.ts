@@ -43,7 +43,7 @@ describe("search reducer", () => {
 
       const submitParams: SetStatusPayload = {
         status: LocalStatus.SEARCH_SUBMIT,
-        params: { query: "text" },
+        params: { query: "TEXT" },
       };
       const act = searchReducer(searchInitState, setStatus(submitParams));
 

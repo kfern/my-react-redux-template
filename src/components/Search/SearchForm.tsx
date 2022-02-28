@@ -1,5 +1,5 @@
 import { memo, Fragment, useState } from "react";
-import { SearchFormData } from "./types";
+import { SearchFormData } from "../../app/types";
 
 interface SearchFormProps {
   handleSubmit: (data: SearchFormData) => void;

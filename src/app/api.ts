@@ -17,7 +17,7 @@ export const pokemonApi = createApi({
   baseQuery: fetchBaseQuery({ baseUrl: "https://pokeapi.co/api/v2/" }),
   endpoints: (builder) => ({
     getPokemonByName: builder.query<Pokemon, string>({
-      query: (name) => `pokemon/${name}`,
+      query: (name) => `pokemon/${name.toLowerCase()}`,
     }),
   }),
 });

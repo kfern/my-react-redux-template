@@ -1,6 +1,6 @@
 import logo from "./logo.svg";
 import { Counter } from "./features/counter/Counter";
-import Search from "./features/search/Search";
+import Search from "./components/Search/Search";
 import "./App.css";
 
 function App() {
