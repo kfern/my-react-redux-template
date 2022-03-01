@@ -13,6 +13,7 @@
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
+    "test:coverage": "CI=true react-scripts test --coverage",
     "eject": "react-scripts eject",
     "prettier": "prettier ./src --write"
   },
@@ -46,5 +47,15 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
-  }
+  },
+	"jest": {
+		"collectCoverageFrom": [
+			"**/src/**",
+			"!**/src/*.ts",
+			"!**/src/index.tsx",
+			"!**/src/**/*.svg",
+			"!**/src/**/types.ts",
+			"!**/node_modules/**"
+		]
+	}  
 }
