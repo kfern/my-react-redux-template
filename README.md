@@ -1,4 +1,8 @@
+
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app), using the [Redux](https://redux.js.org/) and [Redux Toolkit](https://redux-toolkit.js.org/) template.
+
+[![test](https://github.com/kfern/my-react-redux-template/actions/workflows/tests.yml/badge.svg)](https://github.com/kfern/my-react-redux-template/actions/workflows/tests.yml)
+[![codecov](https://codecov.io/gh/kfern/my-react-redux-template/branch/main/graph/badge.svg?token=91V58TPJX6)](https://codecov.io/gh/kfern/my-react-redux-template)
 
 ## Available Scripts
 
